@@ -67,12 +67,16 @@ export default class TextChat extends Chat {
         const senderId = info.senderId;
         const webHook = info.sessionWebhook;
 
+        debug.out("text.js----70");
+
         let markdown = null;
         if (info.conversationType === '1')
             markdown = MDUserMsg(answer.slice(0,6), answer);
         else if (info.conversationType === '2')
             markdown = MDGroupMsg(answer.slice(0,6), senderId, answer);
         
+        debug.out("text.js----78");
+
         /*const markdownMsg = `<font color=#008000>@${senderId} </font>  \n\n ${answer}`;
 
         const data = {
@@ -98,6 +102,8 @@ export default class TextChat extends Chat {
         
         await axios(config);
         res.send("OK");*/
+
+        debug.out("text.js----106");
 
         res.set({
             'Content-Type': 'application/json',
