@@ -4,8 +4,8 @@ services:
     name: chatgpt-dingtalk-robot
     env: node
     rootDir: .
-    autoDeploy: false
-    repo: https://github.com/sytpb/chatgpt-dingtalk-robot.git # optional
+    autoDeploy: true
+    repo: https://github.com/zkewind/dingdingGPT-js.git # optional
     region: singapore     # optional (defaults to oregon)
     plan: free            # optional (defaults to starter instance type)
     branch: beta          # optional (defaults to master)
@@ -20,6 +20,8 @@ services:
       - key: APPSECRET
         sync: false
       - key: MODE
-        value: gpt-4
+        value: gpt-3.5-turbo
+      - key: OPENAI_MODEL
+        value: gpt-3.5-turbo
       - key: OPENAI_API_KEY
         sync: false
